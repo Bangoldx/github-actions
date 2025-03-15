@@ -30,7 +30,7 @@ jobs:
           node-version: '20.x'
       - run: npm install
       - run: npm test
-  depoly:
+  deploy:
     needs: test
 
     permissions:
@@ -42,7 +42,7 @@ jobs:
       name: Production
       url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: checkout repo
